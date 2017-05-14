@@ -46,7 +46,7 @@ Make a histogram of the total number of steps taken per day
 hist(bydateActivity$steps,col='green',xlab='Total number of steps taken per day',main='Histogram of total steps taken per day',breaks=5)
 ```
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-4-1.png)
+![](figures/unnamed-chunk-4-1.png)
 
 What is the average daily activity pattern?
 -------------------------------------------
@@ -58,7 +58,7 @@ byIntervalActivity<-aggregate(steps~interval,activityData,mean)
 plot(byIntervalActivity,type='l',main='Average daily step pattern',xlab='Step count recording interval', ylab='Average step count')
 ```
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-5-1.png)
+![](figures/unnamed-chunk-5-1.png)
 
 Which 5-minute interval, on average across all the days in the datastep, contains the maximum number of steps?
 
@@ -98,7 +98,7 @@ bydateActivity2 <- aggregate(steps~date, activityData2, sum)
 hist(bydateActivity2$steps, col='green', xlab='Daily total steps', main='Histogram of daily total steps', breaks=5)
 ```
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-9-1.png)
+![](figures/unnamed-chunk-9-1.png)
 
 Calcualte the mean and median total number of steps taken per day.
 
@@ -117,7 +117,7 @@ hist(bydateActivity$steps,col='red',xlab='Daily total steps',main='Daily total s
 hist(bydateActivity2$steps,col='blue',xlab='Daily total steps',main='Daily total steps with imputation',breaks=5)
 ```
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-11-1.png)
+![](figures/unnamed-chunk-11-1.png)
 
 ``` r
 par(mfrow=c(1,1))
@@ -163,4 +163,4 @@ library(ggplot2)
 ggplot(byIntervalActivity2,aes(interval,steps))+geom_line()+facet_grid(~weekday)+theme_bw()+labs(title='Average daily pattern')
 ```
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-13-1.png) During weekdays, there are more steps taken in the morning (6am-9am), while during weekends, the number of steps taken are more than those of weekdays and more evenly distributed between 9am to 8pm.
+![](figures/unnamed-chunk-13-1.png) During weekdays, there are more steps taken in the morning (6am-9am), while during weekends, the number of steps taken are more than those of weekdays and more evenly distributed between 9am to 8pm.
