@@ -62,8 +62,11 @@ cat('The total number of missing values in the dataset is', sumNA)
 
 Fill the missing values with the interval mean steps
 ```{r}
+#find the intervals with missing steps
 naInterval <- data.frame(interval=activityData[is.na(activityData$steps), 'interval'])
+#find the mean steps associated witht the interval
 naSteps <- merge(naInterval, byIntervalActivity, all.x=T)[, 'steps']
+#create another data and fill the missing values
 activityData2=activityData
 activityData2[is.na(activityData2$steps), 'steps'] <- naSteps
 ```
